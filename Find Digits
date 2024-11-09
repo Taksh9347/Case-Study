@@ -1,0 +1,27 @@
+#include<stdio.h>
+void storeDigits(int num, int digits[], int size) {
+    int i = 0;
+    int x=num;
+    while (num != 0) {
+        digits[i] = num % 10;
+        num /= 10;
+        i++;
+    }
+    size = i;
+    int divisors=0;
+    for (int j = size - 1; j >= 0; j--) {
+        if(x%digits[j]==0){
+        	divisors++;
+		}
+    }  
+    printf("%d",divisors);
+}
+
+int main(){
+	int n,size=0,digits[15];
+	printf("Enter n\n");
+	scanf("%d",&n);
+	storeDigits(n,digits,size);
+	return 0;
+}
+
