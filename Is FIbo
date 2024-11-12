@@ -1,0 +1,29 @@
+#include<stdio.h>
+int isFibonacci(int n) {
+    int x=0;
+    int y=1;
+    int z=x+y;
+    while (z < n) {
+        x=y;
+        y=z;
+        z=x+y;
+    }
+    return (n == z || n == 0 || n == 1);
+}
+int main(){
+    int t,m;
+    printf("Enter number of test cases\n");
+    scanf("%d",&t);
+    printf("Enter numbers\n");
+    for (int i=1;i<=t;i++){
+    
+    scanf("%d",&m);
+    if(isFibonacci(m)){
+        printf("IsFibo");
+    }
+    else {
+    	printf("IsNotFibo");
+	}
+    printf("\n");
+}
+}
