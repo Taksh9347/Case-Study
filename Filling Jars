@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+  int n,m;
+  printf("enter number of jars: ");
+  scanf("%d",&n);
+   printf("enter number of operations: ");
+  scanf("%d",&m);
+  int a,b,k;
+  int candy=0;
+  for (int j=1;j<=m;j++){
+    printf("Enter a b and k\n");
+  scanf("%d%d%d",&a,&b,&k);
+  candy=candy+k*(b-a+1);
+ }
+ printf("average=%d",candy/n);
+ return 0;
+}
