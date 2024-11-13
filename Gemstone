@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    printf("Enter the value of N \n");
+    int n;
+    scanf("%d",&n);
+    int arr[n][122];
+
+    for(int i=0;i<n;i++) {
+        for (int j=0;j<122;j++) {
+            arr[i][j] = 0;
+        }
+    }
+    printf("Enter %d rock compositions\n",n);
+    for(int j=0;j<n;j++){
+        char comp[100];
+        scanf("%s",&comp);
+
+        for(int i=0;i<strlen(comp);i++) {
+            arr[j][comp[i]]++;
+        }
+    }
+
+    int gem_elements = 0;
+    for(int i=97;i<123;i++) {
+        int count = 1;
+        for(int j=0;j<n;j++) {
+            if(arr[j][i]) {
+                count=1;
+            } else {
+                count = 0;
+                break;
+            }
+        }
+        if (count) {
+            gem_elements++;
+        }
+    }
+
+    printf("%d",gem_elements);
+    
+    return 0;
+}
